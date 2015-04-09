@@ -107,6 +107,7 @@ node[:drupal][:sites].each do |site_name, site|
       repository site[:repository][:uri]
       revision site[:repository][:revision]
       keep_releases site[:deploy][:releases]
+      shallow_clone site[:repository][:shallow_clone]
 
       before_migrate do
         if site[:repository][:submodule]
